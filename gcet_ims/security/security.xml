@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Inventory Manager -->
+    <record id="group_inventory_manager" model="res.groups">
+        <field name="name">Inventory Manager</field>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <!-- Warehouse Staff -->
+    <record id="group_warehouse_staff" model="res.groups">
+        <field name="name">Warehouse Staff</field>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+</odoo>
