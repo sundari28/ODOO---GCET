@@ -23,11 +23,13 @@ Features:
     "author": "GCET",
     "license": "LGPL-3",
     "depends": [
-        "base"
+        "base",
+        "auth_signup",
     ],
     "data": [
         "security/security.xml",
         "security/ir.model.access.csv",
+        "views/users_views.xml",
         "views/product_views.xml",
         "views/warehouse_views.xml",
         "views/operation_views.xml",

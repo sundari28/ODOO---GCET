@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+    <!--
+        StockSense Role Assignment — inherits the native res.users form.
+
+        Odoo automatically generates a Selection field named
+        sel_groups_<uid1>_<uid2> for ungrouped group pairs, giving a
+        radio-button single-selection in the user form.
+
+        Since the actual database IDs of res.groups records are not
+        known at XML-write time, we instead surface the group assignment
+        via a filtered many2many_tags widget and clear instructional text,
+        which is the safest approach that does not rely on dynamic field
+        names generated at install time.
+    -->
+
+    <record id="view_gcet_users_form_inherit" model="ir.ui.view">
+        <field name="name">gcet.users.form.inherit</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Add a StockSense Role tab before the standard Access Rights tab -->
+            <xpath expr="//page[@name='access_rights']" position="before">
+                <page string="StockSense Role" name="gcet_role">
+
+                    <group string="Role Assignment">
+                        <field
+                            name="groups_id"
+                            widget="many2many_tags"
+                            string="StockSense Role"
+                            help="Add 'Inventory Manager' or 'Warehouse Staff'."
+                        />
+                    </group>
+
+                    <div class="alert alert-info" role="alert">
+                        <strong>Role guide:</strong>
+                        <ul>
+                            <li>
+                                <strong>Inventory Manager</strong> —
+                                can create, edit and delete products,
+                                warehouses, locations, and operations.
+                            </li>
+                            <li>
+                                <strong>Warehouse Staff</strong> —
+                                read access to products, warehouses and
+                                locations; can create and edit stock
+                                operations and their lines.
+                            </li>
+                        </ul>
+                        Assign <em>only one</em> StockSense role per user.
+                        Users without a role will be unable to see the
+                        GCET Inventory menus.
+                    </div>
+
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+
+    <!--
+        Standalone action: scoped user list showing internal users only.
+        Reachable from the admin Users menu that Odoo creates under
+        Settings when auth_signup is installed.
+    -->
+    <record id="action_gcet_users" model="ir.actions.act_window">
+        <field name="name">StockSense Users</field>
+        <field name="res_model">res.users</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('share', '=', False)]</field>
+        <field name="context">{'default_share': False}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No internal users found.
+            </p>
+            <p>
+                Create a user and assign them the
+                <strong>Inventory Manager</strong> or
+                <strong>Warehouse Staff</strong> role
+                from the <em>StockSense Role</em> tab.
+            </p>
+        </field>
+    </record>
+
+</odoo>
