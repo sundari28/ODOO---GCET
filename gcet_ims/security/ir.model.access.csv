@@ -3,3 +3,6 @@ access_gcet_product_user,gcet.product user,model_gcet_product,base.group_user,1,
 access_gcet_product_category_user,gcet.product.category user,model_gcet_product_category,base.group_user,1,1,1,1
 access_gcet_warehouse_user,gcet.warehouse user,model_gcet_warehouse,base.group_user,1,1,1,1
 access_gcet_location_user,gcet.location user,model_gcet_location,base.group_user,1,1,1,1
+access_gcet_stock_operation_user,gcet.stock.operation user,model_gcet_stock_operation,base.group_user,1,1,1,1
+access_gcet_stock_operation_line_user,gcet.stock.operation.line user,model_gcet_stock_operation_line,base.group_user,1,1,1,1
+access_gcet_stock_ledger_user,gcet.stock.ledger user,model_gcet_stock_ledger,base.group_user,1,1,1,1
