@@ -28,7 +28,7 @@
 
                     <group string="Role Assignment">
                         <field
-                            name="groups_id"
+                            name="group_ids"
                             widget="many2many_tags"
                             string="StockSense Role"
                             help="Add 'Inventory Manager' or 'Warehouse Staff'."

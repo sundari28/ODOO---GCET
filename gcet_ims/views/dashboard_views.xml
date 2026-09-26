@@ -2,11 +2,15 @@
 
 <odoo>
 
+    <record id="record_gcet_inventory_dashboard" model="gcet.inventory.dashboard">
+        <field name="name">Inventory Dashboard</field>
+    </record>
+
     <record id="view_gcet_inventory_dashboard_form" model="ir.ui.view">
         <field name="name">gcet.inventory.dashboard.form</field>
         <field name="model">gcet.inventory.dashboard</field>
         <field name="arch" type="xml">
-            <form string="GCET Inventory Dashboard">
+            <form string="GCET Inventory Dashboard" create="0" edit="0" delete="0">
                 <sheet>
                     <h1>Inventory Dashboard</h1>
 
@@ -35,6 +39,7 @@
         <field name="name">Inventory Dashboard</field>
         <field name="res_model">gcet.inventory.dashboard</field>
         <field name="view_mode">form</field>
+        <field name="res_id" ref="record_gcet_inventory_dashboard"/>
         <field name="view_id" ref="view_gcet_inventory_dashboard_form"/>
     </record>
 
