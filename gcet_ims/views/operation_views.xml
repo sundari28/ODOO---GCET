@@ -1,6 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-
-<odoo>
+﻿<odoo>
 
     <record id="view_gcet_operation_list" model="ir.ui.view">
         <field name="name">gcet.stock.operation.list</field>
@@ -10,6 +8,8 @@
                 <field name="name"/>
                 <field name="operation_type"/>
                 <field name="date"/>
+                <field name="source_location_id"/>
+                <field name="destination_location_id"/>
                 <field name="state"/>
             </list>
         </field>
@@ -53,12 +53,13 @@
                     </div>
 
                     <group>
-                        <group>
+                        <group string="Operation Details">
                             <field name="operation_type"/>
                             <field name="date"/>
+                            <field name="state" readonly="1"/>
                         </group>
 
-                        <group>
+                        <group string="Locations">
                             <field name="source_location_id"/>
                             <field name="destination_location_id"/>
                         </group>
@@ -90,9 +91,14 @@
         <field name="model">gcet.stock.operation</field>
         <field name="arch" type="xml">
             <search string="Search Operations">
+
                 <field name="name"/>
                 <field name="operation_type"/>
                 <field name="state"/>
+                <field name="source_location_id"/>
+                <field name="destination_location_id"/>
+
+                <separator/>
 
                 <filter name="draft"
                         string="Draft"
@@ -105,6 +111,29 @@
                 <filter name="done"
                         string="Done"
                         domain="[('state', '=', 'done')]"/>
+
+                <filter name="canceled"
+                        string="Canceled"
+                        domain="[('state', '=', 'canceled')]"/>
+
+                <separator/>
+
+                <filter name="receipts"
+                        string="Receipts"
+                        domain="[('operation_type', '=', 'receipt')]"/>
+
+                <filter name="deliveries"
+                        string="Deliveries"
+                        domain="[('operation_type', '=', 'delivery')]"/>
+
+                <filter name="internal"
+                        string="Internal Transfers"
+                        domain="[('operation_type', '=', 'internal')]"/>
+
+                <filter name="adjustments"
+                        string="Adjustments"
+                        domain="[('operation_type', '=', 'adjustment')]"/>
+
             </search>
         </field>
     </record>
@@ -148,7 +177,7 @@
         <field name="name">gcet.stock.ledger.list</field>
         <field name="model">gcet.stock.ledger</field>
         <field name="arch" type="xml">
-            <list string="Stock Ledger">
+            <list string="Move History">
                 <field name="date"/>
                 <field name="operation_id"/>
                 <field name="product_id"/>
@@ -160,10 +189,45 @@
         </field>
     </record>
 
+    <record id="view_gcet_ledger_search" model="ir.ui.view">
+        <field name="name">gcet.stock.ledger.search</field>
+        <field name="model">gcet.stock.ledger</field>
+        <field name="arch" type="xml">
+            <search string="Search Move History">
+
+                <field name="operation_id"/>
+                <field name="product_id"/>
+                <field name="operation_type"/>
+                <field name="source_location_id"/>
+                <field name="destination_location_id"/>
+
+                <separator/>
+
+                <filter name="receipts"
+                        string="Receipts"
+                        domain="[('operation_type', '=', 'receipt')]"/>
+
+                <filter name="deliveries"
+                        string="Deliveries"
+                        domain="[('operation_type', '=', 'delivery')]"/>
+
+                <filter name="internal"
+                        string="Internal Transfers"
+                        domain="[('operation_type', '=', 'internal')]"/>
+
+                <filter name="adjustments"
+                        string="Adjustments"
+                        domain="[('operation_type', '=', 'adjustment')]"/>
+
+            </search>
+        </field>
+    </record>
+
     <record id="action_gcet_ledger" model="ir.actions.act_window">
-        <field name="name">Stock Ledger</field>
+        <field name="name">Move History</field>
         <field name="res_model">gcet.stock.ledger</field>
         <field name="view_mode">list</field>
+        <field name="search_view_id" ref="view_gcet_ledger_search"/>
     </record>
 
 </odoo>
