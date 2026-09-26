@@ -6,3 +6,4 @@ access_gcet_location_user,gcet.location user,model_gcet_location,base.group_user
 access_gcet_stock_operation_user,gcet.stock.operation user,model_gcet_stock_operation,base.group_user,1,1,1,1
 access_gcet_stock_operation_line_user,gcet.stock.operation.line user,model_gcet_stock_operation_line,base.group_user,1,1,1,1
 access_gcet_stock_ledger_user,gcet.stock.ledger user,model_gcet_stock_ledger,base.group_user,1,1,1,1
+access_gcet_inventory_dashboard_user,gcet.inventory.dashboard user,model_gcet_inventory_dashboard,base.group_user,1,1,1,1

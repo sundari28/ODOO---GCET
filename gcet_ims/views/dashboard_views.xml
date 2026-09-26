@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+    <record id="view_gcet_inventory_dashboard_form" model="ir.ui.view">
+        <field name="name">gcet.inventory.dashboard.form</field>
+        <field name="model">gcet.inventory.dashboard</field>
+        <field name="arch" type="xml">
+            <form string="GCET Inventory Dashboard">
+                <sheet>
+                    <h1>Inventory Dashboard</h1>
+
+                    <group col="3">
+                        <group>
+                            <field name="total_stock" readonly="1"/>
+                            <field name="low_stock_count" readonly="1"/>
+                        </group>
+
+                        <group>
+                            <field name="out_of_stock_count" readonly="1"/>
+                            <field name="pending_receipts" readonly="1"/>
+                        </group>
+
+                        <group>
+                            <field name="pending_deliveries" readonly="1"/>
+                            <field name="internal_transfers" readonly="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_gcet_inventory_dashboard" model="ir.actions.act_window">
+        <field name="name">Inventory Dashboard</field>
+        <field name="res_model">gcet.inventory.dashboard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_gcet_inventory_dashboard_form"/>
+    </record>
+
+</odoo>

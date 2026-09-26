@@ -30,6 +30,7 @@ Features:
         "views/product_views.xml",
         "views/warehouse_views.xml",
         "views/operation_views.xml",
+        "views/dashboard_views.xml",
         "views/menu.xml"
     ],
     "installable": True,
