@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <odoo>
 
@@ -6,7 +6,7 @@
         <field name="name">gcet.product.list</field>
         <field name="model">gcet.product</field>
         <field name="arch" type="xml">
-            <list string="Products">
+            <list string="Products" decoration-danger="low_stock == True">
                 <field name="name"/>
                 <field name="sku"/>
                 <field name="category_id"/>
