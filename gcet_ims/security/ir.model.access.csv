@@ -1,9 +1,17 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_gcet_product_user,gcet.product user,model_gcet_product,base.group_user,1,1,1,1
-access_gcet_product_category_user,gcet.product.category user,model_gcet_product_category,base.group_user,1,1,1,1
-access_gcet_warehouse_user,gcet.warehouse user,model_gcet_warehouse,base.group_user,1,1,1,1
-access_gcet_location_user,gcet.location user,model_gcet_location,base.group_user,1,1,1,1
-access_gcet_stock_operation_user,gcet.stock.operation user,model_gcet_stock_operation,base.group_user,1,1,1,1
-access_gcet_stock_operation_line_user,gcet.stock.operation.line user,model_gcet_stock_operation_line,base.group_user,1,1,1,1
-access_gcet_stock_ledger_user,gcet.stock.ledger user,model_gcet_stock_ledger,base.group_user,1,1,1,1
-access_gcet_inventory_dashboard_user,gcet.inventory.dashboard user,model_gcet_inventory_dashboard,base.group_user,1,1,1,1
+access_gcet_product_manager,gcet.product manager,model_gcet_product,gcet_ims.group_inventory_manager,1,1,1,1
+access_gcet_product_staff,gcet.product staff,model_gcet_product,gcet_ims.group_warehouse_staff,1,0,0,0
+access_gcet_product_category_manager,gcet.product.category manager,model_gcet_product_category,gcet_ims.group_inventory_manager,1,1,1,1
+access_gcet_product_category_staff,gcet.product.category staff,model_gcet_product_category,gcet_ims.group_warehouse_staff,1,0,0,0
+access_gcet_warehouse_manager,gcet.warehouse manager,model_gcet_warehouse,gcet_ims.group_inventory_manager,1,1,1,1
+access_gcet_warehouse_staff,gcet.warehouse staff,model_gcet_warehouse,gcet_ims.group_warehouse_staff,1,0,0,0
+access_gcet_location_manager,gcet.location manager,model_gcet_location,gcet_ims.group_inventory_manager,1,1,1,1
+access_gcet_location_staff,gcet.location staff,model_gcet_location,gcet_ims.group_warehouse_staff,1,0,0,0
+access_gcet_stock_operation_manager,gcet.stock.operation manager,model_gcet_stock_operation,gcet_ims.group_inventory_manager,1,1,1,1
+access_gcet_stock_operation_staff,gcet.stock.operation staff,model_gcet_stock_operation,gcet_ims.group_warehouse_staff,1,1,1,0
+access_gcet_stock_operation_line_manager,gcet.stock.operation.line manager,model_gcet_stock_operation_line,gcet_ims.group_inventory_manager,1,1,1,1
+access_gcet_stock_operation_line_staff,gcet.stock.operation.line staff,model_gcet_stock_operation_line,gcet_ims.group_warehouse_staff,1,1,1,0
+access_gcet_stock_ledger_manager,gcet.stock.ledger manager,model_gcet_stock_ledger,gcet_ims.group_inventory_manager,1,0,0,0
+access_gcet_stock_ledger_staff,gcet.stock.ledger staff,model_gcet_stock_ledger,gcet_ims.group_warehouse_staff,1,0,0,0
+access_gcet_inventory_dashboard_manager,gcet.inventory.dashboard manager,model_gcet_inventory_dashboard,gcet_ims.group_inventory_manager,1,0,0,0
+access_gcet_inventory_dashboard_staff,gcet.inventory.dashboard staff,model_gcet_inventory_dashboard,gcet_ims.group_warehouse_staff,1,0,0,0
