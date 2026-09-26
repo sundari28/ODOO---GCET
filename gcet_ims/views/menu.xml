@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+    <menuitem
+        id="menu_gcet_ims_root"
+        name="GCET Inventory"
+        sequence="10"
+    />
+
+    <menuitem
+        id="menu_gcet_products"
+        name="Products"
+        parent="menu_gcet_ims_root"
+        sequence="10"
+    />
+
+    <menuitem
+        id="menu_gcet_product_list"
+        name="Products"
+        parent="menu_gcet_products"
+        action="action_gcet_products"
+        sequence="10"
+    />
+
+    <menuitem
+        id="menu_gcet_category_list"
+        name="Categories"
+        parent="menu_gcet_products"
+        action="action_gcet_categories"
+        sequence="20"
+    />
+
+    <menuitem
+        id="menu_gcet_warehouse"
+        name="Warehouse"
+        parent="menu_gcet_ims_root"
+        sequence="20"
+    />
+
+    <menuitem
+        id="menu_gcet_warehouse_list"
+        name="Warehouses"
+        parent="menu_gcet_warehouse"
+        action="action_gcet_warehouses"
+        sequence="10"
+    />
+
+    <menuitem
+        id="menu_gcet_location_list"
+        name="Locations"
+        parent="menu_gcet_warehouse"
+        action="action_gcet_locations"
+        sequence="20"
+    />
+
+</odoo>

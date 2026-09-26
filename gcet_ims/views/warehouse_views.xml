@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+    <record id="view_gcet_warehouse_list" model="ir.ui.view">
+        <field name="name">gcet.warehouse.list</field>
+        <field name="model">gcet.warehouse</field>
+        <field name="arch" type="xml">
+            <list string="Warehouses">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="address"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_gcet_warehouse_form" model="ir.ui.view">
+        <field name="name">gcet.warehouse.form</field>
+        <field name="model">gcet.warehouse</field>
+        <field name="arch" type="xml">
+            <form string="Warehouse">
+                <sheet>
+
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+
+                    <group>
+                        <field name="code"/>
+                        <field name="address"/>
+                        <field name="active"/>
+                    </group>
+
+                    <notebook>
+                        <page string="Locations">
+                            <field name="location_ids">
+                                <list editable="bottom">
+                                    <field name="name"/>
+                                    <field name="code"/>
+                                    <field name="location_type"/>
+                                    <field name="parent_id"/>
+                                    <field name="active"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_gcet_warehouses" model="ir.actions.act_window">
+        <field name="name">Warehouses</field>
+        <field name="res_model">gcet.warehouse</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="view_gcet_location_list" model="ir.ui.view">
+        <field name="name">gcet.location.list</field>
+        <field name="model">gcet.location</field>
+        <field name="arch" type="xml">
+            <list string="Locations">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="warehouse_id"/>
+                <field name="location_type"/>
+                <field name="parent_id"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_gcet_location_form" model="ir.ui.view">
+        <field name="name">gcet.location.form</field>
+        <field name="model">gcet.location</field>
+        <field name="arch" type="xml">
+            <form string="Location">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="warehouse_id"/>
+                        <field name="parent_id"/>
+                        <field name="location_type"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_gcet_locations" model="ir.actions.act_window">
+        <field name="name">Locations</field>
+        <field name="res_model">gcet.location</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>
