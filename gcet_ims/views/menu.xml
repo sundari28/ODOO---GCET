@@ -4,7 +4,15 @@
 
     <menuitem id="menu_gcet_ims_root"
               name="GCET Inventory"
-              sequence="10"/>
+              sequence="10"
+              groups="gcet_ims.group_inventory_manager,gcet_ims.group_warehouse_staff"/>
+
+    <menuitem id="menu_gcet_dashboard"
+              name="Dashboard"
+              parent="menu_gcet_ims_root"
+              action="action_gcet_inventory_dashboard"
+              sequence="1"
+              groups="gcet_ims.group_inventory_manager,gcet_ims.group_warehouse_staff"/>
 
     <menuitem id="menu_gcet_dashboard"
               name="Dashboard"
@@ -15,70 +23,82 @@
     <menuitem id="menu_gcet_products"
               name="Products"
               parent="menu_gcet_ims_root"
-              sequence="10"/>
+              sequence="10"
+              groups="gcet_ims.group_inventory_manager,gcet_ims.group_warehouse_staff"/>
 
     <menuitem id="menu_gcet_product_list"
               name="Products"
               parent="menu_gcet_products"
               action="action_gcet_products"
-              sequence="10"/>
+              sequence="10"
+              groups="gcet_ims.group_inventory_manager,gcet_ims.group_warehouse_staff"/>
 
     <menuitem id="menu_gcet_category_list"
               name="Categories"
               parent="menu_gcet_products"
               action="action_gcet_categories"
-              sequence="20"/>
+              sequence="20"
+              groups="gcet_ims.group_inventory_manager,gcet_ims.group_warehouse_staff"/>
 
     <menuitem id="menu_gcet_warehouse"
               name="Warehouse"
               parent="menu_gcet_ims_root"
-              sequence="20"/>
+              sequence="20"
+              groups="gcet_ims.group_inventory_manager,gcet_ims.group_warehouse_staff"/>
 
     <menuitem id="menu_gcet_warehouse_list"
               name="Warehouses"
               parent="menu_gcet_warehouse"
               action="action_gcet_warehouses"
-              sequence="10"/>
+              sequence="10"
+              groups="gcet_ims.group_inventory_manager,gcet_ims.group_warehouse_staff"/>
 
     <menuitem id="menu_gcet_location_list"
               name="Locations"
               parent="menu_gcet_warehouse"
               action="action_gcet_locations"
-              sequence="20"/>
+              sequence="20"
+              groups="gcet_ims.group_inventory_manager,gcet_ims.group_warehouse_staff"/>
 
     <menuitem id="menu_gcet_operations"
               name="Operations"
               parent="menu_gcet_ims_root"
-              sequence="30"/>
+              sequence="30"
+              groups="gcet_ims.group_inventory_manager,gcet_ims.group_warehouse_staff"/>
 
     <menuitem id="menu_gcet_receipts"
               name="Receipts"
               parent="menu_gcet_operations"
               action="action_gcet_receipts"
-              sequence="10"/>
+              sequence="10"
+              groups="gcet_ims.group_inventory_manager,gcet_ims.group_warehouse_staff"/>
 
     <menuitem id="menu_gcet_deliveries"
               name="Delivery Orders"
               parent="menu_gcet_operations"
               action="action_gcet_deliveries"
-              sequence="20"/>
+              sequence="20"
+              groups="gcet_ims.group_inventory_manager,gcet_ims.group_warehouse_staff"/>
 
     <menuitem id="menu_gcet_transfers"
               name="Internal Transfers"
               parent="menu_gcet_operations"
               action="action_gcet_transfers"
-              sequence="30"/>
+              sequence="30"
+              groups="gcet_ims.group_inventory_manager,gcet_ims.group_warehouse_staff"/>
 
     <menuitem id="menu_gcet_adjustments"
               name="Inventory Adjustments"
               parent="menu_gcet_operations"
               action="action_gcet_adjustments"
-              sequence="40"/>
+              sequence="40"
+              groups="gcet_ims.group_inventory_manager,gcet_ims.group_warehouse_staff"/>
 
     <menuitem id="menu_gcet_ledger"
               name="Move History"
               parent="menu_gcet_operations"
               action="action_gcet_ledger"
-              sequence="50"/>
+              sequence="50"
+              groups="gcet_ims.group_inventory_manager,gcet_ims.group_warehouse_staff"/>
 
 </odoo>
